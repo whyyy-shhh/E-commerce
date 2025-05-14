@@ -1,0 +1,227 @@
+body {
+    background: linear-gradient(to right, #f5f5dc, #d3d3d3); /* Beige to Grey */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    height: 100%; /* Ensure body fills full height */
+}
+
+html {
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #f5f5dc, #d3d3d3);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow-y: auto; /* Allow full vertical scroll */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    margin-left: 280px;
+    padding: 20px;
+    max-width: calc(100% - 280px);
+    box-sizing: border-box;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: calc(100% - 16px);
+}
+
+h1 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-family: 'Merriweather', serif;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-family: 'Merriweather', serif;
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.category-label input[type="radio"],
+.category-label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.keyword-button {
+    margin-bottom: 8px;
+}
+
+.section-heading {
+    margin-bottom: 10px;
+}
+
+.icon-spacing {
+    margin-right: 8px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-container button {
+    flex: 1;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+}
+
+.main-content {
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+/* Product image section */
+.product-image-container {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.product-image {
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Right content section */
+.right-column {
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-sellers,
+.popular-blogs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-sellers h2,
+.popular-blogs h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-family: 'Merriweather', serif;
+}
+
+.seller,
+.blog {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.seller button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.seller button:hover {
+    background-color: #45a049;
+}
+
+.product-details h3 {
+    color: #4a00e0;
+    margin: 10px 0;
+    font-family: 'Merriweather', serif;
+    white-space: normal;
+}
+
+.product-details p {
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    white-space: normal;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        white-space: normal;
+    }
+    .product-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .right-column {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    .seller,
+    .blog {
+        white-space: normal;
+    }
+}
